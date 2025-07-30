@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Calendar, Handshake } from "lucide-react";
+import { ArrowRight, Users, Handshake, Layers } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ctaOptions = [
   {
@@ -9,14 +10,6 @@ const ctaOptions = [
     buttonText: "Join Waitlist",
     variant: "hero" as const,
     highlight: true
-  },
-  {
-    icon: Calendar,
-    title: "Book a Demo",
-    description: "See our autonomous drones in action with a personalized demonstration",
-    buttonText: "Schedule Demo",
-    variant: "outline-hero" as const,
-    highlight: false
   },
   {
     icon: Handshake,
@@ -44,7 +37,7 @@ const CTASection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {ctaOptions.map((option, index) => (
             <div 
               key={index}
@@ -93,7 +86,18 @@ const CTASection = () => {
         </div>
 
         <div className="text-center mt-16 animate-fade-in-up">
-          <p className="text-blue-200 mb-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            <p className="text-blue-200">
+              Explore our applications across different industries
+            </p>
+            <Button variant="outline-hero" size="lg" asChild>
+              <Link to="/applications" className="flex items-center gap-2">
+                <Layers className="w-5 h-5" />
+                View All Applications
+              </Link>
+            </Button>
+          </div>
+          <p className="text-blue-200/70 mb-4">
             Questions? We're here to help.
           </p>
           <Button variant="link" className="text-white underline-offset-4 hover:text-blue-200">

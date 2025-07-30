@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Play, ChevronDown } from "lucide-react";
-import heroImage from "@/assets/hero-drone.jpg";
+import Drone3D from "./Drone3D";
 
 const HeroSection = () => {
   return (
@@ -52,14 +52,12 @@ const HeroSection = () => {
             </div>
           </div>
           
-          {/* Hero Image */}
+          {/* 3D Drone Animation */}
           <div className="relative animate-float">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent rounded-3xl blur-3xl" />
-            <img 
-              src={heroImage} 
-              alt="Autonomous drone with docking station"
-              className="relative z-10 w-full h-auto rounded-3xl shadow-hover"
-            />
+            <div className="relative z-10 w-full h-auto rounded-3xl shadow-hover overflow-hidden">
+              <Drone3D />
+            </div>
           </div>
         </div>
       </div>
